@@ -6,8 +6,8 @@
 #include <chrono>
 #include <iomanip>
 #include <string>
-#include <algorithm>   // для std::max, std::min
-#include <limits>      // для std::numeric_limits
+#include <algorithm>  
+#include <limits>     
 
 using namespace std;
 
@@ -33,7 +33,7 @@ vector<int> sieve_primes(int limit) {
     return primes;
 }
 
-// Функция для сохранения интерактивного HTML-графика
+
 void savePlotHTML(const string& filename,
                   const vector<pair<double,double>>& points) {
     ofstream html(filename);
@@ -110,7 +110,7 @@ int main() {
     vector<int> primes = sieve_primes(sqrtN);
     log_file << "Generated " << primes.size() << " primes up to " << sqrtN << endl;
 
-    vector<pair<double,double>> plot_points;  // для графика
+    vector<pair<double,double>> plot_points; 
 
     long long L = L_START;
     int interval_id = 1;
@@ -120,7 +120,7 @@ int main() {
         long long R = min(L + SEGMENT_SIZE - 1, N);
         size_t len = R - L + 1;
 
-        // Массивы для сегмента
+       
         vector<long long> phi(len), rem(len);
         for (size_t i = 0; i < len; ++i) {
             long long x = L + i;
